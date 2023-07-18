@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        body .float1 img{
+            display: block;
+            float: left;
+        }
+        hr { clear: both;}
+        .wrapper {
+            width: 800px;
+            border: 1px solid;
+            margin: 0 auto;
+        }
+        .wrapper > img {
+            float: right;
+            margin: 20px;
+            border: 1px solid;
+        }
+        p{
+            clear: right;
+        }
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+    <img src="../img/ban1.gif" alt="">
+    <img src="../img/ban2.gif" alt="">
+    <img src="../img/ban3.gif" alt="">
+    <img src="../img/ban4.gif" alt="">
+    </div>
+    <hr>
+    <body>
+    <div class="wrapper clearfix">
+        <img src="../img/ban1.gif" alt="">
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum architecto beatae fugit consectetur fugiat et est esse dolores adipisci animi saepe quo alias voluptate dolore omnis tenetur in ea, officia, reprehenderit quam velit voluptates amet? Temporibus ipsum praesentium nostrum aut dolorem, accusantium doloribus? Velit excepturi dolores iusto odio voluptate sequi!</span>
+        <a href="">링크</a>
+        <div style="clear: both;"></div>
+    </div>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate odit possimus nam commodi tenetur porro quibusdam fuga incidunt quia. Dolor excepturi unde facere? Rerum pariatur deserunt voluptates tempora dolores? Neque veniam non quo, beatae suscipit aliquid nobis ut consectetur possimus dolores ipsam blanditiis facere laborum facilis id aliquam odio vitae autem pariatur. Error sint nam adipisci dolore atque, quaerat libero? Iste modi delectus amet nemo distinctio, consectetur qui ullam consequuntur itaque eum dignissimos aspernatur quaerat officiis sapiente optio. Amet, quo.</p>
+</body>
+</html>

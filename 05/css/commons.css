@@ -1,0 +1,8 @@
+/*  한글로 구성된 주석*/
+@charset "utf-8";
+
+.box {width: 100px; height: 100px;}
+.box1 {background-color: red;}
+.box2 {background-color: yellow;}
+.box3 {background-color: green;}
+.box4 {background-color: blue;}

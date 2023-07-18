@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{width: 500px; margin: 0 auto;}
+        form input:not([type="checkbox"]), form button {width: 90%; padding: 8px; margin: 10px 0;}
+        form output {font-size: 11px; color: red;}
+    </style>
+</head>
+<body>
+    <form  name="frm" action="2-1.html" method=""> <!-- action은 로그인 버튼을 누르면 해당html로 옮겨준다 method에서 post로 하게되면 해당페이지로 옮기지만 주소노출은 안된다 조회만 get으로한다-->
+       <legend>로그인</legend> 
+       <label for="id">ID</label><br>
+       <input id="id" name="userid" placeholder="아이디를 입력하세요" ><br> <!--required : 빈칸 입력해야하는 유효성 검증 , value값을 붙이면 기본 값으로 쓰인다--> 
+       <label for="pw">PW</label><br> <!-- input의 id 와 label의 for가 같으면 포커스가 맞춰진다-->
+       <input type ="password" id="pw" name="password" placeholder="비밀번호를 입력하세요"><br>
+       <label><input type="checkbox" namd="chk" value="remember-me">아이디 저장</label><br> <!--위의 라벨과 인풋의 포커스가 라벨안에 인풋이있으면 자동으로 맞춰진다-->
+       <output name="result"></output>
+       <!-- <button>로그인</button> -->
+       <input type="submit" value="로그인">
+    </form>
+    <script>
+        
+        let frm = document.frm;
+        frm.addEventListener("submit", function (e){
+            frm.result.innerHTML ="";
+            event.preventDefault();
+            if(frm.userid.value.trim().length == 0){
+                frm.result.innerHTML = "아이디를 입력하세요"
+            }
+            else if(frm.password.value.trim().length == 0){
+                frm.result.innerHTML = "비밀번호를 입력하세요"
+            }
+            else {
+                frm.submit();
+            }
+        })
+    </script>
+</body>
+</html>

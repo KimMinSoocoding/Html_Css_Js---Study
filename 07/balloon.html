@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .balloon{
+            background-color: #222; color: white;
+            max-width: 300px;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .balloon::after{
+            float: left;
+            width: 0px;
+            height: 0px;
+            border: 20px solid transparent;;
+            border-top-color: #222;
+            border-top-width: 40px ;
+            margin-left: 130px;
+            margin-top: 20px;
+            transform: skewX(-30deg);
+            display: block;
+            content: '';
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="balloon">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum quibusdam error rem. Saepe nihil recusandae, perspiciatis, iure hic alias doloremque pariatur rem modi ut id aliquam? At nobis fuga repellendus.</div>
+    <div class="tri"></div>
+</body>
+</html>

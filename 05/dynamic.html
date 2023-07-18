@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">이미지 추가</button>
+    <script>
+        let cnt =0;
+        document.getElementById("btn").addEventListener("click", function(){
+            let img = document.createElement("img");
+            img.src="../img/html5_icon.png";
+            img.title = 'html 로고';
+            img.alt ="html 로고" + cnt ++;
+
+            document.body.appendChild(img);
+        });
+    </script>
+</body>
+</html>

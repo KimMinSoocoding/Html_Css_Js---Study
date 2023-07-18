@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<input>
+    <p>
+        <abbr title="???">HTML</abbr> Hyper Text Makup Languge
+    </p>
+    <span>일반텍스트 <b>굵은 텍스트</b></span>
+    <span>일반텍스트 <strong>굵은 텍스트</strong></span>
+    <hr>
+    <span>일반 텍스트<i>기울임 텍스트</i></span>
+    <span>일반 텍스트<em>기울임 텍스트</em></span>
+
+    <hr>
+    <button type="button" id="btn">결과확인</button>
+    <input id="val1"> + <input id="val2"> = <input id="result" readonly>
+    <script>
+        document.getElementById("btn").onclick = function(){
+            let val1 = parseInt(document.getElementById("val1").value)
+            let val2 = parseInt (document.getElementById("val2").value)
+            document.getElementById("result").value = val1 + val2;
+        }
+    </script>
+    <hr>
+    텍스트 <cite>인용부분</cite> 텍스트 <q cite="http://www.google.com">인용2</q>
+    <pre>
+        <code>
+        document.getElementById("btn").oneclick = function(){
+            let val1 = parseInt(document.getElementById("val1").value)
+            let val2 = parseInt (document.getElementById("val2").value)
+            document.getElementById("result").value = val1 + val2;
+        }
+        </code>
+    </pre>
+
+    <!-- 
+        bmp :  원본
+        gif :  256색, 멀티프레임
+        jpg :  8비트 ~ 24비트, 투명처리 불가능, 화질열화 가능성
+        png :  32비트, 투명처리 가능 
+
+     -->
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1 {color: #00ff00;}
+        h2 {color: green;}
+        h3 {color: #a5a;}
+        h4 {color: #ff0000}
+
+        .box {width: 100px; height: 100px; background: rgba(255, 0, 0, .5);}
+        .box2 {position: relative; top:-50px; left: 50px;} 
+        .box1 {background: #0000ff7f;}
+        h5{color : hsl(360, 0, 50);}
+    </style>
+
+</head>
+<body>
+    <form name="frm">
+        <input name="userid">
+        <button>회원가입</button>
+    </form>
+    <script>
+        function isId(str){
+        return /^[a-z0-9]*$/g.test(str);
+        
+        //     let ret = true;
+        //     for(let i=0; i<str.length; i++){
+        //      let val = str[i].charCodeAt();
+        //     if(!(val >= 97 && val <= 97+25 || val >= 48 && val <= 48+9)){
+        //         return false
+        //     }
+        //   }
+        //   return ret;
+        }
+
+     document.frm.onsubmit = function() {
+       event.preventDefault();
+       let userid = document.frm.userid.value;
+       if(!isId(userid)){
+        alert("유효하지 않는 아이디 입니다");
+       }
+     }
+    </script>
+
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        div:first-child{
+            border: 2px solid;
+            width: 800px;
+            padding: 15px;
+            margin: 0 auto;
+        }
+        .toggle-wrap{
+            width: 834px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .toggle{
+            border: 2px solid;
+            width: 800px;
+            padding: 15px;
+            margin: 0 auto;
+            height: 300px;
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: orange;
+        }
+        .content{
+            border: 2px solid;
+            width: 800px;
+            padding: 15px;
+            margin: 0 auto;
+            height: 500px;
+            /* display: none; */
+            background-color: #ccc;
+        }
+    </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        /*
+            show hide toggle
+            fadeIn fadeOut fadeToggle
+            slideDown slideUp slideToggle
+        */
+        $(function(){
+            $("div").eq(0).hover(function(){
+                $(".toggle").stop().slideDown(1000);
+            }, function(){
+                $(".toggle").stop().slideUp(1000);
+            })
+        })
+    </script>
+</head>
+<body>
+
+        <div>마우스 오버영역</div>
+        <div class="toggle-wrap">
+            <div class="toggle">토글영역</div>
+        </div>
+        <div class="content">실제 컨텐츠</div>
+
+    
+</body>
+</html>

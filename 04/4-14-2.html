@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form novalidate> <!-- novalidate가 붙여있다면 이 안에 있는 아이들은 유효성검증을 하지 않겠다라는 뜻-->
+        <fieldset>
+            <legend>
+                <h3>수강 형태</h3>
+            </legend>
+            <label><input type="radio" name="sugang" value="day">주간</label>
+            <label><input type="radio" name="sugang" value="night">야간</label>
+        </fieldset>
+        <fieldset>
+            <legend>
+                <h3>수강 과목</h3>
+            </legend>
+            <label><input type="checkbox" name="subject" value="java">자바프로그래밍</label>
+            <label><input type="checkbox" name="subject" value="db">데이터베이스</label>
+            <label><input type="checkbox" name="subject" value="html">HTML5</label>
+        </fieldset>
+        <fieldset>
+            <legend>
+                <h3>성별</h3>
+            </legend>
+            <select>
+                <option>남</option>
+                <option>녀</option>
+            </select>
+        </fieldset>
+        <fieldset>
+          <legend>
+            <h3>취미</h3>
+          </legend>
+          <select name="hobby" multiple>
+            <option value="exec">운동</option>
+            <option value="sing">노래</option>
+            <option value="read">독서</option>
+            <option value="game">게임</option>
+          </select>
+        </fieldset>
+        <input type="text" name="result" size="50" maxlength="10" minlength="3" value="abcd" readonly>
+        <input type="text" name="result" size="50" maxlength="10" minlength="3" value="abcd" disabled> 
+        <textarea name="content" cols="30" rows="10"></textarea>
+        <button>전송</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            width: 500px; 
+            margin: 0 auto;
+        }
+        img{
+            width: 200px;
+        }
+        input:checked + label{
+            color: green;
+        }
+        #id1:checked ~ img {
+            display: block;
+        }
+        #id2:checked ~ img {
+            display: inline;
+        }
+        #id3:checked ~ img {
+            display: inline-block;
+        }
+        #id4:checked ~ img:nth-of-type(2){
+            display: none;
+        }
+        #id5:checked ~ img:nth-of-type(2){
+            visibility: hidden;  /* 이미지가 있지만 보이지 않음*/
+        }
+
+    </style>
+
+</head>
+<body>
+    <div>
+    <input type="radio" name="select" id="id1"><label for="id1">block</label>
+    <input type="radio" name="select" id="id2" checked><label for="id2">inline</label>
+    <input type="radio" name="select" id="id3"><label for="id3">inline-block</label>
+    <input type="radio" name="select" id="id4"><label for="id4">none(2nd)</label>
+    <input type="radio" name="select" id="id5"><label for="id5">invisible(2nd)</label>
+    <hr>
+    <img src="../img/ban1.gif">
+    <img src="../img/ban2.gif">
+    <img src="../img/ban3.gif">
+    </div>
+</body>
+</html>

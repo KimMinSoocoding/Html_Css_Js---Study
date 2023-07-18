@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- transition 4가지 
+        property, duration, timing-function, delay
+    -->
+    
+    <style>
+       .box{
+            transition: all 1s cubic-bezier(.17,.62,.83,.67) .2s;
+            width: 100px; height: 100px; background-color: red;
+        }
+        .ease{background-color: orange; transition-timing-function: ease;}
+        .linear{background-color: yellow; transition-timing-function: linear;}
+        .ease-in{background-color: green; transition-timing-function: ease-in;}
+        .ease-out{background-color: blue; transition-timing-function: ease-out;}
+        .ease-in-out{background-color: purple; transition-timing-function: ease-in-out;}
+
+        body div:hover .box {
+            width: 200px;
+            margin-left: 300px;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+    <div class="box">cubix</div>
+    <div class="box ease">ease</div>
+    <div class="box linear">linear</div>
+    <div class="box ease-in">ease-in</div>
+    <div class="box ease-out">ease-out</div>
+    <div class="box ease-in-out">ease-in-out</div>
+    </div>
+</body>
+</html>

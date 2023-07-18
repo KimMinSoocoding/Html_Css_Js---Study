@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .wrapper{
+            width: 600px;
+            /* height: 800px;                        */
+            border: 5px solid;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap:wrap;
+            justify-content: space-evenly;
+            align-items: start;
+            align-content: space-evenly;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+        }
+        .box1 {
+            background-color: red;
+            /* height: 50px; */
+        }
+        .box2 {
+            background-color: orange;
+            /* height: 250px; */
+        }
+        .box3 {
+            background-color: yellow;
+            /* height: 150px; */
+            order: 2;
+        }
+        .box4 {
+            background-color: green;
+            /* height: 180px; */
+        }
+        .box5 {
+            background-color: blue;
+            /* height: 30px; */
+            /* justify-self: start; */
+            order: 1;
+            flex-grow: 2;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box3">3</div>
+        <div class="box box5">5</div>
+        <!-- <img src="../img/ban1.gif" alt=""> -->
+    </div>
+    <img src="../img/bnr_join_benefit_v3.svg" alt="">
+</body>
+</html>

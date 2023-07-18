@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .img-wrap{
+            border: 1px solid;
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        img{
+            transition: all .2s;
+        }
+        .scale:hover{
+            transform: scale(.8);
+        }
+        .scalex:hover{
+            transform: scalex(.9);
+        }
+        .scaley:hover{
+            transform: scaley(1.2);
+        }
+        .translate:hover{
+            transform: translate(-30px, -50px);
+        }
+        .rorate:hover{
+            transform: rotate(45deg);
+        }
+        .roratex:hover{
+            transform: rotate(45deg);
+        }
+        roratey{
+            backface-visibility: hidden;
+        }
+        @keyframes identifier {
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="clearfix">
+        <h2>rotate</h2>
+        <div class="img-wrap">
+            <img src="../img/avtar10.jpg" class="rorate">
+        </div>
+        <div class="img-wrap">
+            <img src="../img/avtar10.jpg" class="roratex">
+        </div>
+        <div class="img-wrap">
+            <img src="../img/avtar10.jpg" class="roratey">
+        </div>
+    </div>
+
+    <div class="clearfix">
+        <h2>scale</h2>
+        <div class="img-wrap">
+            <img src="../img/ban1.gif" class="scale">
+        </div>
+        <div class="img-wrap">
+            <img src="../img/ban1.gif" class="scalex">
+        </div>
+        <div class="img-wrap">
+            <img src="../img/ban1.gif" class="scaley">
+        </div>
+    </div>
+    <hr>
+
+</body>
+</html>

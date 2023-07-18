@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src ="scope.js"></script> -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script>
+        var a = function(){
+            $("a").click(function(){
+                return confirm(this.href +"로 이동하시겠습니까?");
+            })
+        }
+        $(a);
+
+        function makeFunc(){
+            var name ="Mozilla";
+            function displayName(){
+                alert(name);
+            }
+            return displayName;
+        }
+        var ret = makeFunc();
+        ret();
+
+       ((a,b) => console.log("hello java",a,b))(10,20);
+
+       let arr =[6,5,4,3,1,7];
+        function comFn(a,b){
+            return b-a;
+        }
+        arr.sort(compFn);
+        console.log(arr);
+
+    //    arr.sort((a,b) => -(a-b)); 람다식
+       arr.sort(function(a,b) {return a-b});
+       console.log(arr);
+    </script>
+
+</head>
+<body>
+    <a href="https://www.google.com">구글</a>
+
+</body>
+</html>

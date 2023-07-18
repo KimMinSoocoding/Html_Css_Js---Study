@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <style>
+        .box{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin: 10px;
+            border: 3px solid;
+        }
+    </style>
+
+    <script>
+        $(function(){
+            $("button").on("click mouseenter", function(){
+                console.log($(this).text());
+                $(this).off("mouseenter");
+            }).one("click", function(){
+                alert($(this).text());
+            })
+
+            // 이벤트 위임 event delegation : 부모에 이벤트를 걸고 그 이벤트를 자식에게 위임 body:부모 , .box:자식 , click이벤트는 innertHtml이 이벤트를 덮어씌운다
+            let colorArr = ['red', 'orange', 'green'];
+            let colorIdx = 0;
+            $(".wrap").on("click", ".box", function(){
+                let str = '<div class="box"></div>';
+                $(this).parent()[0].innerHTML += str;
+                // $('.box').css("background-color", colorArr[colorIdx++ % 3]).css("border-color", colorArr[colorIdx %3]);
+                // 위에 것과 같은 역할을 함
+                $(".box").css({
+                    background : colorArr[colorIdx++ % 3], 
+                    borderColor:colorArr[colorIdx % 3]
+                });
+            })
+        });
+    </script>
+</head>
+<body>
+    <button>click me</button>
+    <div class="wrap">
+        <div class="box"></div>
+    </div>
+
+</body>
+</html>

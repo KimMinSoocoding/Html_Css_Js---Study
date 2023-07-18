@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+       let age = prompt('나이를 입력하세요');
+       let fare = 0; 
+       if(age <= 7 || age >= 70){
+
+        }else if(age <=13){
+            fare = 450;
+        }else if(age <= 19){
+            fare = 720;
+        }else if(age >= 20 && age < 70){
+            fare = 1200;
+        }
+        alert(fare+"원");
+
+        let arr = ["일", "월", "화", "수", "목", "금", "토"];
+        alert(arr[new Date().getDay()] + "요일");
+    </script>
+    
+</body>
+</html>

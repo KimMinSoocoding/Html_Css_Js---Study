@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script>
+        // 두개는 같고 함수타입이다
+        // $ 
+        // jQuery  
+        // $.noConflict(); // $의 기능을 제한한다
+        console.log($);
+        console.log(jQuery);
+        console.log($ === jQuery);
+        
+        // 이름충돌방지
+        (function($){
+            console.log($);
+            console.log(jQuery);
+            console.log($ === jQuery);
+        })(jQuery);
+
+        
+        // $(문자열) : selector
+        // $(객체) : jQuery Object wrapper
+        // $(함수) : ready(onload)
+
+        $(window).on("load",function(){
+            console.log($("h1").text, "load")
+        })
+        $(document).ready(function(){
+            console.log($("h1").text, "ready1")
+
+        })
+        $().ready(function(){
+            console.log($("h1").text, "ready2")
+
+        })
+    
+        $(function(){
+            console.log($("h1").text, "ready2")
+
+        })
+        
+        $(function(){
+            console.log($("h1").text, "ready3")
+            $("h1").css("color", "red");
+            $("h1:nth-of-type(1)").css("background-color", "orange");
+
+            // $(문자열) >> jQuery selector wrapping Object
+            // $(문자열) >> DOM
+            $("h1")[0].title ="첫번째 제목";
+            // DOM >> jQueryObj
+            $(document.getElementsByTagName("h1")[0]).attr("title","변경된 제목") // 오브젝트를 제이커리로 웹핑하면 제이커리가 된다
+
+            $("h1").get(1).title = "두번째 제목"
+
+            $("button").eq(0).click(function(){
+                $("h1").hide(500);
+            })
+            $("button").eq(1).click(function(){
+                $("h1").show(500);
+            })
+
+            $("h1").click(function(){
+                alert($(this).text());
+            })
+            $("h1").click(function(){
+               $(this).text(prompt("변경할 텍스트"));
+            })
+
+            // $('h1').click();
+            // $('h1').trigger("click"); // 위 코드와 같다
+        })
+
+    </script>
+
+</head>
+<body>
+    <button>숨기기</button>
+    <button>보이기</button>
+    <h1>헬로우 jQuery</h1>
+    <h1>hello jQuery</h1>
+    
+</body>
+</html>

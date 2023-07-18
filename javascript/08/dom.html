@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="userid" title="사용자 아이디" placeholder="아이디를 입력하세요">
+    <h2>제목1</h2>
+    <h2>제목2</h2>
+    <div id="wrap">
+        <h2>제목3</h2>
+        <h2>제목4</h2>
+        <h2>제목5</h2>
+    </div>
+    <script>
+        let userid = document.getElementById("userid");
+        let userid2 = document.querySelector("#userid");
+
+        console.log(userid);
+        console.log(userid == userid2);
+
+        for(let i in userid){
+            // console.log(i, userid[i]);
+        }
+
+        userid.style.padding = '12px';
+
+        let h2s = document.getElementsByTagName("h2");
+        console.log(h2s);
+        console.log(h2s.length);
+
+        h2s = document.getElementById("wrap").getElementsByTagName("h2");
+        console.log(h2s);
+        console.log(h2s.length);
+
+        for(let i in h2s){
+            // console.log(h2s[i].innerText);
+            h2s[i].innerText = +i + 1 +"번째 덮어쓴 텍스트";
+        }
+
+        console.log(userid.title);
+        console.log(userid.getAttribute("title"))
+
+        userid.abcd="1234"; // 안됨
+        userid.title = "변경된 타이틀"; // 사용할 수 있는 속성이 있으면 일반적으로 접근이 가능하여 수정가능하다
+        userid["title"] = "변경된 타이틀2"; // 위와동일
+
+        userid.setAttribute("abcd", "1234"); // abcd라는 새로운 속성에 1234 라는 값을 넣겠다라는 것 , 원래 userid에는 abcd라는 속성이 없음
+
+        // userid.setAttribute("disabled", "disabled");
+        userid.setAttribute("disabled", "");
+        // 토글 : 상태의 전환 , 이메일의 경우 제목옆에 체크박스를 누르게 되면 전체선택 되는 것 
+    </script>
+</body>
+</html>

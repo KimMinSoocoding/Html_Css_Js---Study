@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: left;
+            margin: 20px;
+        }
+    </style>
+
+    <script>
+        let h1 = document.getElementById("h1")
+        console.log(h1,1)
+
+        window.onload = function(){
+            console.log(document.getElementById("h1"), 2);
+        }
+    </script>
+
+</head>
+<body>
+    <h1 id="h1">hello java</h1>
+    <button id="btn">배경색 전환</button>
+    <hr>
+    <div class="box"></div>
+    <script>
+        let h2 = document.getElementById("h1")
+        console.log(h2,3)
+
+        document.body.style.backgroundColor = "skyblue";
+        document.getElementById("btn").onclick = function(){
+            // let bgColor = document.body.style.backgroundColor = "skyblue";
+            if(document.body.style.backgroundColor === "skyblue"){
+                document.body.style.backgroundColor = "white";
+            }
+            else{
+                document.body.style.backgroundColor ="skyblue"
+            }
+        }
+
+        // 동적태그에 관련된 이벤트 
+        // let func =function(){
+        //       // document.body.innerHTML += '<div class="box"></div>' // innerHTML : 태그들이 가지고 있던 이벤트 들이 중단되고 문자열밖에 안남는다 
+        //     let box = document.createElement("div");
+        //     box.setAttribute("class", "box");
+        //     box.onclick = func;
+        //     document.body.appendChild(box)
+        // }
+
+        // document.querySelector(".box").onclick = func;
+
+        document.querySelector(".box").onclick = function(){
+            document.body.appendChild(this.cloneNode());
+        }
+    </script>
+</body>
+</html>

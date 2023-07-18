@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // open(url, name, spec, replace)
+        let test =  open("", 'aaa', 'width=400, height=300, left=0' );
+        console.log(test);
+        test.document.write("<h1>hello java</h1>");
+        test.moveTo(0,0);
+
+        //setTimeOut : 일정시간 이후에 할일을 지정 
+        //setInterval : 일정시간에 하고 그이후에 그시간에 또하는 것 
+        window.onload = function(){
+            document.getElementById("time").innerText = new Date();
+           var inter = setInterval(function(){
+                document.getElementById("time").innerText = new Date();
+            },1000)
+            setTimeout(function(){
+                clearInterval(inter);
+            },10000);
+        }
+        document.querySelectorAll("#time");
+        document.getElementById("time");
+
+        document.getElementsByClassName("cls1");
+        document.querySelectorAll(".cls1");
+    </script>
+</head>
+<body>
+    <h1 id="time"></h1>
+    <h1 id="time1" class="cls1"></h1>
+    <h1 id="time2" class="cls1"></h1>
+
+    <product:name></product:name>
+    <person:name></person:name>
+
+</body>
+</html>

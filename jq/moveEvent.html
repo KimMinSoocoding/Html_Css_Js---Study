@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+        .box{
+            width: 1000px;
+            height: 500px;
+            border: 1px solid;
+            margin: 0 auto;
+            position: relative;
+        }
+        .box > * {
+            background-color: #bbb;
+            position: absolute;
+        }
+        .horizon {
+            width: 1000px;
+            height: 1px;
+            top:250px
+        }
+        .vertical{
+            width: 1px;
+            height: 500px;
+            left: 500px;
+        }
+        .position-result{
+            text-align: center;
+        }
+        .outer, .inner{
+            padding: 50px;
+            background-color: red;
+            width: 0;
+        }
+        .inner {
+            background-color: yellow;
+            width: 100px;
+            height: 100px;
+        }
+
+        .red-box {
+            width: 100px;
+            height: 100px;
+            /* margin: 0 auto; */
+            float: left;
+            background-color: red;
+            margin: 10px;
+        }
+    </style>
+
+    <script>
+        $(function(){
+            $(".box").mousemove(function(){
+               $(".position-result").text(event.layerX + "," + event.layerY);
+               $(".vertical").css("left", event.layerX);
+               $(".horizon").css("top", event.layerY);
+            })
+
+            $(".outer").mouseenter(function(){
+                $(this).next().append("<p>mouse enter</p>")
+            }).mouseover(function(){
+                $(this).next().append("<p>mouse over</p>")
+            })
+
+            $(".red-box").click(function(){
+                $("body").append($(this).clone(true));
+            })
+        });
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="horizon"></div>
+        <div class="vertical"></div>
+    </div>
+    <p class="position-result"></p>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+    <div class="enter-result"></div>
+
+    <hr>
+
+    <div class="red-box"></div>
+</body>
+</html>
